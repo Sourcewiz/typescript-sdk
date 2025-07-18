@@ -3,13 +3,13 @@
 ## Installation
 
 ```sh
-npm install wizcommerce-sdk
+npm install wizcommerce
 ```
 
 ## Usage
 
 ```ts
-import { WizCommerce } from "wizcommerce-sdk";
+import { WizCommerce } from "wizcommerce";
 
 const wiz = new WizCommerce(WizCommerce.PRODUCTION, "<API_KEY>");
 
