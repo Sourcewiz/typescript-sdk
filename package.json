@@ -2,12 +2,14 @@
   "name": "wizcommerce-sdk",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --noEmit && npx esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm"
+    "build": "tsc --emitDeclarationOnly --declaration --outDir dist && npx esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm",
+    "prepare": "npm run build"
   },
-  "keywords": [],
+  "keywords": ["wizcommerce", "sdk", "api"],
   "author": "",
   "license": "ISC",
   "type": "module",
