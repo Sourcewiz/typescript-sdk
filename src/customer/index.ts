@@ -4,3 +4,5 @@ export { createCustomer as create } from "./create";
 export { updateCustomer as update } from "./update";
 export { deleteCustomer as delete } from "./delete";
 export * from "./types";
+
+export * as address from "./address";

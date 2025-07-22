@@ -21,6 +21,23 @@ export class WizCommerce {
     update: (id: string, data: Partial<Customer.Customer>) =>
       Customer.update(this.client, id, data),
     delete: (id: string) => Customer.delete(this.client, id),
+    address: {
+      list: (customerId: string, params?: any) =>
+        Customer.address.list(this.client, customerId, params),
+      get: (customerId: string, addressId: string) =>
+        Customer.address.get(this.client, customerId, addressId),
+      create: (
+        customerId: string,
+        data: Customer.address.AddressCreateRequest
+      ) => Customer.address.create(this.client, customerId, data),
+      update: (
+        customerId: string,
+        addressId: string,
+        data: Customer.address.AddressUpdateRequest
+      ) => Customer.address.update(this.client, customerId, addressId, data),
+      delete: (customerId: string, addressId: string) =>
+        Customer.address.delete(this.client, customerId, addressId),
+    },
   };
 
   product = {
