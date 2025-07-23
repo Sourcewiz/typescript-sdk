@@ -1,6 +1,7 @@
 import { HttpClient } from "./core/httpClient";
 import * as Customer from "./customer";
 import * as Product from "./product";
+import * as Order from "./order";
 
 export class WizCommerce {
   static LOCAL = "http://localhost:8080/v1";
@@ -65,5 +66,16 @@ export class WizCommerce {
     update: (id: string, data: Product.ProductUpdateRequest) =>
       Product.update(this.client, id, data),
     delete: (id: string) => Product.delete(this.client, id),
+  };
+  
+  order = {
+    list: (params?: any) => Order.list(this.client, params),
+    get: (id: string) => Order.get(this.client, id),
+    create: (data: Order.OrderCreateRequest) => Order.create(this.client, data),
+    update: (id: string, data: Order.OrderUpdateRequest) =>
+      Order.update(this.client, id, data),
+    delete: (id: string) => Order.delete(this.client, id),
+    patchStatus: (id: string, data: Order.OrderPatchStatusRequest) =>
+      Order.patchStatus(this.client, id, data),
   };
 }
