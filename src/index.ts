@@ -38,6 +38,23 @@ export class WizCommerce {
       delete: (customerId: string, addressId: string) =>
         Customer.address.delete(this.client, customerId, addressId),
     },
+    contact: {
+      list: (customerId: string, params?: any) =>
+        Customer.contact.list(this.client, customerId, params),
+      get: (customerId: string, contactId: string) =>
+        Customer.contact.get(this.client, customerId, contactId),
+      create: (
+        customerId: string,
+        data: Customer.contact.ContactCreateRequest
+      ) => Customer.contact.create(this.client, customerId, data),
+      update: (
+        customerId: string,
+        contactId: string,
+        data: Customer.contact.ContactUpdateRequest
+      ) => Customer.contact.update(this.client, customerId, contactId, data),
+      delete: (customerId: string, contactId: string) =>
+        Customer.contact.delete(this.client, customerId, contactId),
+    },
   };
 
   product = {

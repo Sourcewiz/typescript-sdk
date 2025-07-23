@@ -6,3 +6,4 @@ export { deleteCustomer as delete } from "./delete";
 export * from "./types";
 
 export * as address from "./address";
+export * as contact from "./contact";
