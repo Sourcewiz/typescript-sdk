@@ -5,6 +5,7 @@ import * as Order from "./order/index.js";
 import * as Invoice from "./invoice/index.js";
 import * as Attribute from "./attribute/index.js";
 import * as Inventory from "./inventory/index.js";
+import * as PaymentMethod from "./paymentmethod/index.js";
 
 export class WizCommerce {
   static LOCAL = "http://localhost:8080/v1";
@@ -103,5 +104,11 @@ export class WizCommerce {
       Inventory.list(this.client, params),
     update: (data: Inventory.InventoryCreateRequest) =>
       Inventory.update(this.client, data),
+  };
+  paymentmethod = {
+    list: (params?: any) => PaymentMethod.list(this.client, params),
+    create: (data: PaymentMethod.PaymentMethodCreateRequest) =>
+      PaymentMethod.create(this.client, data),
+    delete: (id: string) => PaymentMethod.delete(this.client, id),
   };
 }
