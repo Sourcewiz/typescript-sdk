@@ -6,7 +6,7 @@ export async function listAttributes(
   params?: AttributeRequest
 ): Promise<AttributeResponse[]> {
   const res = await client.get<{ data: AttributeResponse[] }>(
-    "/v1/attributes",
+    "/attributes",
     params
   );
   return res.data;
