@@ -1,5 +1,5 @@
-import { HttpClient } from "../../core/httpClient";
-import { ContactUpdateRequest, Contact } from "./types";
+import { HttpClient } from "../../core/httpClient.js";
+import { ContactUpdateRequest, Contact } from "./types.js";
 
 export async function update(
   client: HttpClient,

@@ -1,5 +1,5 @@
-import { HttpClient } from "../core/httpClient";
-import { OrderCreateRequest, Order } from "./types";
+import { HttpClient } from "../core/httpClient.js";
+import { OrderCreateRequest, Order } from "./types.js";
 
 export async function create(
   client: HttpClient,

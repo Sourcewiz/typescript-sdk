@@ -1,7 +1,8 @@
-import { HttpClient } from "./core/httpClient";
-import * as Customer from "./customer";
-import * as Product from "./product";
-import * as Order from "./order";
+import { HttpClient } from "./core/httpClient.js";
+import * as Customer from "./customer/index.js";
+import * as Product from "./product/index.js";
+import * as Order from "./order/index.js";
+import * as Invoice from "./invoice/index.js";
 
 export class WizCommerce {
   static LOCAL = "http://localhost:8080/v1";
@@ -67,7 +68,7 @@ export class WizCommerce {
       Product.update(this.client, id, data),
     delete: (id: string) => Product.delete(this.client, id),
   };
-  
+
   order = {
     list: (params?: any) => Order.list(this.client, params),
     get: (id: string) => Order.get(this.client, id),
@@ -77,5 +78,16 @@ export class WizCommerce {
     delete: (id: string) => Order.delete(this.client, id),
     patchStatus: (id: string, data: Order.OrderPatchStatusRequest) =>
       Order.patchStatus(this.client, id, data),
+  };
+
+  invoice = {
+    list: (params?: Invoice.InvoiceListParams) =>
+      Invoice.list(this.client, params),
+    get: (id: string) => Invoice.get(this.client, id),
+    create: (data: Invoice.InvoiceCreateRequest) =>
+      Invoice.create(this.client, data),
+    update: (id: string, data: Invoice.InvoiceUpdateRequest) =>
+      Invoice.update(this.client, id, data),
+    delete: (id: string) => Invoice.delete(this.client, id),
   };
 }

@@ -1,6 +1,6 @@
-export { listProducts as list } from "./list";
-export { getProduct as get } from "./get";
-export { createProduct as create } from "./create";
-export { updateProduct as update } from "./update";
-export { deleteProduct as delete } from "./delete";
-export * from "./types";
+export { listProducts as list } from "./list.js";
+export { getProduct as get } from "./get.js";
+export { createProduct as create } from "./create.js";
+export { updateProduct as update } from "./update.js";
+export { deleteProduct as delete } from "./delete.js";
+export * from "./types.js";

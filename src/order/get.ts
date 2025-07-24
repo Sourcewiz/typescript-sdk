@@ -1,4 +1,4 @@
-import { HttpClient } from "../core/httpClient";
+import { HttpClient } from "../core/httpClient.js";
 import { Order } from "./types";
 
 export async function get(

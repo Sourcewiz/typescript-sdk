@@ -1,6 +1,6 @@
-export { list } from "./list";
-export { get } from "./get";
-export { create } from "./create";
-export { update } from "./update";
-export { deleteContact as delete } from "./delete";
-export * from "./types";
+export { list } from "./list.js";
+export { get } from "./get.js";
+export { create } from "./create.js";
+export { update } from "./update.js";
+export { deleteContact as delete } from "./delete.js";
+export * from "./types.js";

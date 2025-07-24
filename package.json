@@ -1,17 +1,38 @@
 {
   "name": "wizcommerce",
   "version": "1.0.0",
-  "description": "",
+  "description": "WizCommerce TypeScript SDK for accessing external APIs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --emitDeclarationOnly --declaration --outDir dist && npx esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm",
-    "prepare": "npm run build"
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "keywords": ["wizcommerce", "sdk", "api"],
-  "author": "",
-  "license": "ISC",
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test",
+    "test": "echo \"No tests defined. Add unit tests.\" && exit 0"
+  },
+  "keywords": ["wizcommerce", "sdk", "api", "typescript", "commerce"],
+  "author": "Aditya Prakash <aditya.p@wizcommerce.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sourcewiz/typescript-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sourcewiz/typescript-sdk/issues"
+  },
+  "homepage": "https://github.com/Sourcewiz/typescript-sdk#readme",
   "type": "module",
   "devDependencies": {
     "@types/node": "^24.0.14",

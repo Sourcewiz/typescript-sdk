@@ -1,5 +1,5 @@
-import { HttpClient } from "../../core/httpClient";
-import { Address } from "./types";
+import { HttpClient } from "../../core/httpClient.js";
+import { Address } from "./types.js";
 
 export async function getAddress(
   client: HttpClient,

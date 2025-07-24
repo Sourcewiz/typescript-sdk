@@ -1,5 +1,5 @@
-import { HttpClient } from "../../core/httpClient";
-import { AddressCreateRequest, Address } from "./types";
+import { HttpClient } from "../../core/httpClient.js";
+import { AddressCreateRequest, Address } from "./types.js";
 
 export async function createAddress(
   client: HttpClient,

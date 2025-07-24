@@ -1,5 +1,5 @@
-import { HttpClient } from "../core/httpClient";
-import { OrderPatchStatusRequest, Order } from "./types";
+import { HttpClient } from "../core/httpClient.js";
+import { OrderPatchStatusRequest, Order } from "./types.js";
 
 export async function patchStatus(
   client: HttpClient,

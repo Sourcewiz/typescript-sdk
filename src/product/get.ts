@@ -1,5 +1,5 @@
-import { HttpClient } from "../core/httpClient";
-import { Product } from "./types";
+import { HttpClient } from "../core/httpClient.js";
+import { Product } from "./types.js";
 
 export async function getProduct(
   client: HttpClient,

@@ -1,4 +1,4 @@
-import { HttpClient } from "../core/httpClient";
+import { HttpClient } from "../core/httpClient.js";
 
 export async function deleteProduct(
   client: HttpClient,

@@ -1,8 +1,8 @@
 import { HttpClient } from "../core/httpClient.js";
 
-export async function deleteCustomer(
+export async function deleteInvoice(
   client: HttpClient,
   id: string
 ): Promise<void> {
-  await client.delete(`/customers/${id}`);
+  return client.delete(`/invoices/${id}`);
 }

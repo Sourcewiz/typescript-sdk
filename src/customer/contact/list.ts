@@ -1,5 +1,5 @@
-import { HttpClient } from "../../core/httpClient";
-import { ContactListRequest, Contact } from "./types";
+import { HttpClient } from "../../core/httpClient.js";
+import { ContactListRequest, Contact } from "./types.js";
 
 export async function list(
   client: HttpClient,
