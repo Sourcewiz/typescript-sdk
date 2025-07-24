@@ -2,18 +2,25 @@
   "name": "wizcommerce",
   "version": "1.0.0",
   "description": "WizCommerce TypeScript SDK for accessing external APIs",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "dev": "tsc --watch",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
@@ -22,7 +29,13 @@
     "prepublishOnly": "npm test",
     "test": "echo \"No tests defined. Add unit tests.\" && exit 0"
   },
-  "keywords": ["wizcommerce", "sdk", "api", "typescript", "commerce"],
+  "keywords": [
+    "wizcommerce",
+    "sdk",
+    "api",
+    "typescript",
+    "commerce"
+  ],
   "author": "Aditya Prakash <aditya.p@wizcommerce.com>",
   "license": "MIT",
   "repository": {

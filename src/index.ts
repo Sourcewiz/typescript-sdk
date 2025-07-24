@@ -3,6 +3,7 @@ import * as Customer from "./customer/index.js";
 import * as Product from "./product/index.js";
 import * as Order from "./order/index.js";
 import * as Invoice from "./invoice/index.js";
+import * as Attribute from "./attribute/index.js";
 
 export class WizCommerce {
   static LOCAL = "http://localhost:8080/v1";
@@ -89,5 +90,10 @@ export class WizCommerce {
     update: (id: string, data: Invoice.InvoiceUpdateRequest) =>
       Invoice.update(this.client, id, data),
     delete: (id: string) => Invoice.delete(this.client, id),
+  };
+
+  attribute = {
+    list: (params?: Attribute.AttributeRequest) =>
+      Attribute.list(this.client, params),
   };
 }
