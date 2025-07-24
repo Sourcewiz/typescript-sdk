@@ -1,3 +1,4 @@
+import { ApiError, HttpError } from "./errors.js";
 export class HttpClient {
   constructor(
     private apiKey: string,
@@ -22,8 +23,13 @@ export class HttpClient {
         headers: this.buildHeaders(),
       });
       if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`GET ${path} failed: ${res.status} ${text}`);
+        let errorBody: HttpError;
+        try {
+          errorBody = await res.json();
+        } catch {
+          errorBody = { code: String(res.status), message: await res.text() };
+        }
+        throw new ApiError(errorBody);
       }
       return res.json();
     } catch (err) {
@@ -39,8 +45,13 @@ export class HttpClient {
         body: JSON.stringify(body),
       });
       if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`POST ${path} failed: ${res.status} ${text}`);
+        let errorBody: HttpError;
+        try {
+          errorBody = await res.json();
+        } catch {
+          errorBody = { code: String(res.status), message: await res.text() };
+        }
+        throw new ApiError(errorBody);
       }
       return res.json();
     } catch (err) {
@@ -56,8 +67,13 @@ export class HttpClient {
         body: JSON.stringify(body),
       });
       if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`PUT ${path} failed: ${res.status} ${text}`);
+        let errorBody: HttpError;
+        try {
+          errorBody = await res.json();
+        } catch {
+          errorBody = { code: String(res.status), message: await res.text() };
+        }
+        throw new ApiError(errorBody);
       }
       return res.json();
     } catch (err) {
@@ -73,8 +89,13 @@ export class HttpClient {
         body: JSON.stringify(body),
       });
       if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`PATCH ${path} failed: ${res.status} ${text}`);
+        let errorBody: HttpError;
+        try {
+          errorBody = await res.json();
+        } catch {
+          errorBody = { code: String(res.status), message: await res.text() };
+        }
+        throw new ApiError(errorBody);
       }
       return res.json();
     } catch (err) {
@@ -89,8 +110,13 @@ export class HttpClient {
         headers: this.buildHeaders(),
       });
       if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`DELETE ${path} failed: ${res.status} ${text}`);
+        let errorBody: HttpError;
+        try {
+          errorBody = await res.json();
+        } catch {
+          errorBody = { code: String(res.status), message: await res.text() };
+        }
+        throw new ApiError(errorBody);
       }
     } catch (err) {
       throw err;

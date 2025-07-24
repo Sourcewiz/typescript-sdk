@@ -1,19 +1,66 @@
-export interface Customer {
-  id: string;
-  referenceId: string;
-  companyName: string;
-  displayName: string;
+export interface CustomerUpdateRequest {
+  companyName?: string;
+  displayName?: string;
   freightTerm?: string;
   shippingMethod?: string;
   paymentMode?: string;
   paymentTerm?: string;
-  status?: string;
+  primaryContactId?: string;
+  defaultShippingAddressId?: string;
+  defaultBillingAddressId?: string;
+  referenceId?: string;
+  displayId?: string;
+  assignedSalesRepIds?: string[];
+  assignedPriceListId?: string;
   firstName?: string;
   lastName?: string;
   phone?: string;
   email?: string;
-  createdAt?: string;
-  updatedAt?: string;
+  addresses?: any[];
+  contacts?: any[];
+  attributes?: any[];
+}
+export interface CustomerListResponse {
+  id: string;
+  referenceId: string;
+  displayId: string;
+  name: string;
+  displayName: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  status: string;
+  freightTerm: string;
+  shippingMethod: string;
+  paymentMode: string;
+  paymentTerm: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CustomerDetailsResponse {
+  id: string;
+  referenceId: string;
+  displayId: string;
+  name: string;
+  displayName: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  status: string;
+  freightTerm: string;
+  shippingMethod: string;
+  paymentMode: string;
+  paymentTerm: string;
+  assignedSalesReps: any[];
+  assignedPriceList?: any;
+  addresses: any[];
+  contacts: any[];
+  attributes: any[];
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface CustomerListRequest {

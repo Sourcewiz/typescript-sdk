@@ -1,9 +1,9 @@
 import { HttpClient } from "../core/httpClient.js";
-import { Customer } from "./types.js";
+import { CustomerDetailsResponse } from "./types.js";
 
 export async function getCustomer(
   client: HttpClient,
   id: string
-): Promise<Customer> {
+): Promise<CustomerDetailsResponse> {
   return client.get(`/customers/${id}`);
 }

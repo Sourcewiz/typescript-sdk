@@ -26,7 +26,7 @@ export class WizCommerce {
     get: (id: string) => Customer.get(this.client, id),
     create: (data: Customer.CustomerCreateRequest) =>
       Customer.create(this.client, data),
-    update: (id: string, data: Partial<Customer.Customer>) =>
+    update: (id: string, data: Partial<Customer.CustomerUpdateRequest>) =>
       Customer.update(this.client, id, data),
     delete: (id: string) => Customer.delete(this.client, id),
     address: {

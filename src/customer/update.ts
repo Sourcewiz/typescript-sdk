@@ -1,10 +1,10 @@
 import { HttpClient } from "../core/httpClient.js";
-import { Customer } from "./types.js";
+import { CustomerDetailsResponse, CustomerUpdateRequest } from "./types.js";
 
 export async function updateCustomer(
   client: HttpClient,
   id: string,
-  data: Partial<Customer>
-): Promise<Customer> {
+  data: Partial<CustomerUpdateRequest>
+): Promise<CustomerDetailsResponse> {
   return client.patch(`/customers/${id}`, data);
 }
