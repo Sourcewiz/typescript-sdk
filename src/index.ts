@@ -6,6 +6,7 @@ import * as Invoice from "./invoice/index.js";
 import * as Attribute from "./attribute/index.js";
 import * as Inventory from "./inventory/index.js";
 import * as PaymentMethod from "./paymentmethod/index.js";
+import * as PriceList from "./pricelist/index.js";
 
 export class WizCommerce {
   static LOCAL = "http://localhost:8080/v1";
@@ -110,5 +111,14 @@ export class WizCommerce {
     create: (data: PaymentMethod.PaymentMethodCreateRequest) =>
       PaymentMethod.create(this.client, data),
     delete: (id: string) => PaymentMethod.delete(this.client, id),
+  };
+  pricelist = {
+    list: (params?: any) => PriceList.list(this.client, params),
+    get: (id: string) => PriceList.get(this.client, id),
+    create: (data: PriceList.PriceListCreateRequest) =>
+      PriceList.create(this.client, data),
+    update: (id: string, data: PriceList.PriceListUpdateRequest) =>
+      PriceList.update(this.client, id, data),
+    delete: (id: string) => PriceList.delete(this.client, id),
   };
 }
