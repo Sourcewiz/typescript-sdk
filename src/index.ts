@@ -4,6 +4,7 @@ import * as Product from "./product/index.js";
 import * as Order from "./order/index.js";
 import * as Invoice from "./invoice/index.js";
 import * as Attribute from "./attribute/index.js";
+import * as Inventory from "./inventory/index.js";
 
 export class WizCommerce {
   static LOCAL = "http://localhost:8080/v1";
@@ -95,5 +96,12 @@ export class WizCommerce {
   attribute = {
     list: (params?: Attribute.AttributeRequest) =>
       Attribute.list(this.client, params),
+  };
+
+  inventory = {
+    list: (params?: Inventory.InventoryRequest) =>
+      Inventory.list(this.client, params),
+    update: (data: Inventory.InventoryCreateRequest) =>
+      Inventory.update(this.client, data),
   };
 }
