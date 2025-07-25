@@ -1,3 +1,5 @@
+import { Address, AddressCreateRequest, AddressUpdateRequest } from "./address/types.js";
+import { Contact, ContactCreateRequest, ContactUpdateRequest } from "./contact/types.js";
 export interface CustomerUpdateRequest {
   companyName?: string;
   displayName?: string;
@@ -30,8 +32,8 @@ export interface CustomerListResponse {
   lastName: string;
   phone: string;
   email: string;
-  status: string;
-  freightTerm: string;
+  addresses?: AddressUpdateRequest[];
+  contacts?: ContactUpdateRequest[];
   shippingMethod: string;
   paymentMode: string;
   paymentTerm: string;
@@ -56,8 +58,8 @@ export interface CustomerDetailsResponse {
   paymentTerm: string;
   assignedSalesReps: any[];
   assignedPriceList?: any;
-  addresses: any[];
-  contacts: any[];
+  addresses: Address[];
+  contacts: Contact[];
   attributes: any[];
   createdAt: string;
   updatedAt: string;
@@ -86,7 +88,7 @@ export interface CustomerCreateRequest {
   email?: string;
   assignedSalesRepIds?: string[];
   assignedPriceListID?: string;
-  addresses?: any[];
-  contacts?: any[];
+  addresses?: AddressCreateRequest[];
+  contacts?: ContactCreateRequest[];
   attributes?: any[];
 }
