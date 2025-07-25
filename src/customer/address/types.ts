@@ -1,3 +1,4 @@
+import { Pagination } from "../../core/types.js";
 export interface Address {
   id: string;
   customerId: string;
@@ -20,14 +21,12 @@ export interface Address {
   updatedAt?: string;
 }
 
-export interface AddressListRequest {
+export interface AddressListRequest extends Pagination {
   customerId?: string;
   referenceIds?: string[];
   sortBy?: "created_at" | "updated_at";
   sort?: "asc" | "desc";
   status?: "active" | "inactive";
-  page?: number;
-  pageSize?: number;
 }
 
 export interface AddressCreateRequest {

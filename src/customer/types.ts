@@ -1,5 +1,14 @@
-import { Address, AddressCreateRequest, AddressUpdateRequest } from "./address/types.js";
-import { Contact, ContactCreateRequest, ContactUpdateRequest } from "./contact/types.js";
+import {
+  Address,
+  AddressCreateRequest,
+  AddressUpdateRequest,
+} from "./address/types.js";
+import {
+  Contact,
+  ContactCreateRequest,
+  ContactUpdateRequest,
+} from "./contact/types.js";
+import { Pagination } from "../core/types.js";
 
 export interface CustomerUpdateRequest {
   companyName?: string;
@@ -66,13 +75,11 @@ export interface CustomerDetailsResponse {
   updatedAt: string;
 }
 
-export interface CustomerListRequest {
+export interface CustomerListRequest extends Pagination {
   sortBy?: string;
   sort?: string;
   status?: string;
   referenceIds?: string[];
-  page?: number;
-  pageSize?: number;
 }
 
 export interface CustomerCreateRequest {

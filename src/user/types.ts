@@ -1,6 +1,6 @@
-export interface SalesRepListRequest {
-  page?: number;
-  page_size?: number;
+import { Pagination } from "../core/types.js";
+
+export interface SalesRepListRequest extends Pagination {
   sort_by?: "created_at" | "updated_at" | "first_name" | "last_name";
   sort?: "asc" | "desc";
   status?: "active" | "inactive";

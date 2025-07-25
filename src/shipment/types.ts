@@ -1,8 +1,4 @@
-// Pagination interface
-export interface Pagination {
-  page?: number;
-  pageSize?: number;
-}
+import { Pagination } from "../core/types.js";
 
 export interface ShipmentRequest extends Pagination {
   referenceIds?: string[];

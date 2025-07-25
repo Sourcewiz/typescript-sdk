@@ -1,3 +1,4 @@
+import { Pagination } from "../core/types.js";
 export interface Order {
   id: string;
   referenceId?: string;
@@ -95,9 +96,7 @@ export interface Attribute {
   value: string;
 }
 
-export interface OrderListRequest {
-  page?: number;
-  pageSize?: number;
+export interface OrderListRequest extends Pagination {
   sortBy?: string;
   sort?: string;
   referenceIds?: string[];

@@ -1,3 +1,4 @@
+import { Pagination } from "../core/types.js";
 export interface InvoiceItemCreateRequest {
   reference_id: string;
   sku: string;
@@ -44,9 +45,7 @@ export interface Invoice {
   name?: string;
 }
 
-export interface InvoiceListParams {
-  page?: number;
-  page_size?: number;
+export interface InvoiceListParams extends Pagination {
   reference_ids?: string;
   sort_by?: "created_at" | "updated_at";
   sort?: "asc" | "desc";

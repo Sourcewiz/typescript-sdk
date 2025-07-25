@@ -1,6 +1,5 @@
-export interface PaymentMethodRequest {
-  page?: number;
-  page_size?: number;
+import { Pagination } from "../core/types.js";
+export interface PaymentMethodRequest extends Pagination {
   customer_id?: string;
 }
 

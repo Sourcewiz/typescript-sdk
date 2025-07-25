@@ -1,10 +1,9 @@
-export interface InventoryRequest {
+import { Pagination } from "../core/types.js";
+export interface InventoryRequest extends Pagination {
   sku?: string;
   sort_by?: "created_at" | "updated_at" | "product_id" | "id";
   sort?: "asc" | "desc";
   status?: "active" | "inactive";
-  page?: number;
-  page_size?: number;
 }
 
 export interface OnOrderDetails {

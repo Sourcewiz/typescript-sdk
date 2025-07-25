@@ -1,3 +1,4 @@
+import { Pagination } from "../../core/types.js";
 export interface Contact {
   id: string;
   referenceId: string;
@@ -6,19 +7,17 @@ export interface Contact {
   email: string;
   phone?: string;
   designation?: string;
-  status?: 'active' | 'inactive';
+  status?: "active" | "inactive";
   isDefault?: boolean;
   attributes?: any[];
   createdAt?: string;
   updatedAt?: string;
 }
 
-export interface ContactListRequest {
-  sortBy?: 'created_at' | 'updated_at';
-  sort?: 'asc' | 'desc';
-  status?: 'active' | 'inactive';
-  page?: number;
-  pageSize?: number;
+export interface ContactListRequest extends Pagination {
+  sortBy?: "created_at" | "updated_at";
+  sort?: "asc" | "desc";
+  status?: "active" | "inactive";
 }
 
 export interface ContactCreateRequest {

@@ -1,6 +1,5 @@
-export interface PriceListRequest {
-  page?: number;
-  page_size?: number;
+import { Pagination } from "../core/types.js";
+export interface PriceListRequest extends Pagination {
   sort_by?: "created_at" | "updated_at" | "name";
   sort?: "asc" | "desc";
   status?: "active" | "inactive";

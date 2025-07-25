@@ -1,3 +1,4 @@
+import { Pagination } from "../core/types.js";
 export interface Product {
   id: string;
   referenceId: string;
@@ -35,9 +36,7 @@ export interface Attribute {
   value: string;
 }
 
-export interface ProductListRequest {
-  page?: number;
-  page_size?: number;
+export interface ProductListRequest extends Pagination {
   is_primary?: boolean;
   sort?: "asc" | "desc";
   sort_by?: "created_at" | "updated_at" | "name" | "sku_id";
