@@ -1,7 +1,7 @@
-export interface AttributeRequest {
+import { Pagination } from "../core/types";
+
+export interface AttributeRequest extends Pagination {
   entity: 'customer' | 'address' | 'contact' | 'order' | 'product';
-  page?: number;
-  page_size?: number;
 }
 
 export interface AttributeResponse {

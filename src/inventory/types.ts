@@ -1,4 +1,5 @@
 import { Pagination } from "../core/types.js";
+import { AttributeResponse } from "../attribute/types.js";
 export interface InventoryRequest extends Pagination {
   sku?: string;
   sort_by?: "created_at" | "updated_at" | "product_id" | "id";
@@ -65,4 +66,5 @@ export interface InventoryResponse {
   back_order_allowed: boolean;
   created_at: string;
   updated_at: string;
+  attributes?: AttributeResponse[];
 }
