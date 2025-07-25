@@ -1,5 +1,6 @@
 import { Address, AddressCreateRequest, AddressUpdateRequest } from "./address/types.js";
 import { Contact, ContactCreateRequest, ContactUpdateRequest } from "./contact/types.js";
+
 export interface CustomerUpdateRequest {
   companyName?: string;
   displayName?: string;
