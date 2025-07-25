@@ -26,11 +26,17 @@ wiz.customer.list().then(console.log);
 - `wiz.customer.create(data)`
 - `wiz.customer.update(id, data)`
 - `wiz.customer.delete(id)`
+
+#### Customer Address
+
 - `wiz.customer.address.list(customerId, params?)`
 - `wiz.customer.address.get(customerId, addressId)`
 - `wiz.customer.address.create(customerId, data)`
 - `wiz.customer.address.update(customerId, addressId, data)`
 - `wiz.customer.address.delete(customerId, addressId)`
+
+#### Customer Contact
+
 - `wiz.customer.contact.list(customerId, params?)`
 - `wiz.customer.contact.get(customerId, contactId)`
 - `wiz.customer.contact.create(customerId, data)`
