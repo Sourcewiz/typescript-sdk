@@ -9,6 +9,7 @@ import * as PaymentMethod from "./paymentmethod/index.js";
 import * as PriceList from "./pricelist/index.js";
 import * as ProductPricing from "./productpricing/index.js";
 import * as SalesRep from "./user/index.js";
+import * as Shipment from "./shipment/index.js";
 
 export class WizCommerce {
   static LOCAL = "http://localhost:8080/v1";
@@ -135,5 +136,17 @@ export class WizCommerce {
   salesrep = {
     list: (params?: SalesRep.SalesRepListRequest) =>
       SalesRep.list(this.client, params),
+  };
+
+  shipment = {
+    list: (params?: any) => Shipment.list(this.client, params),
+    get: (params: any) => Shipment.get(this.client, params),
+    create: (data: Shipment.ShipmentCreateRequest) =>
+      Shipment.create(this.client, data),
+    update: (id: string, data: Shipment.ShipmentUpdateRequest) =>
+      Shipment.update(this.client, id, data),
+    delete: (params: Shipment.ShipmentPathParams) =>
+      Shipment.delete(this.client, params),
+
   };
 }
