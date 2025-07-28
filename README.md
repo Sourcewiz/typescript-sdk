@@ -7,6 +7,19 @@ WizCommerce SDK is a modular TypeScript/JavaScript client for the WizCommerce AP
 - [Installation](#installation)
 - [Usage](#usage)
 - [API](#api)
+  - [Customer](#customer)
+  - [Customer Address](#customer-address)
+  - [Customer Contact](#customer-contact)
+  - [Product](#product)
+  - [Order](#order)
+  - [Invoice](#invoice)
+  - [Attribute](#attribute)
+  - [Inventory](#inventory)
+  - [Payment Method](#payment-method)
+  - [Price List](#price-list)
+  - [Product Pricing](#product-pricing)
+  - [Sales Rep](#sales-rep-user)
+  - [Shipment](#shipment)
 - [Pagination](#pagination)
 - [Error Handling](#error-handling)
 - [Contributing & Support](#contributing--support)
@@ -54,6 +67,8 @@ wiz.customer.get("bad-id").catch((err) => {
 
 ## API
 
+The WizCommerce SDK provides comprehensive access to all resources in the WizCommerce platform. Each resource has its own detailed documentation page with examples, parameter descriptions, and response formats.
+
 ## Pagination
 
 All list methods accept `page` and `page_size` parameters for paginated results. Example:
@@ -81,6 +96,8 @@ try {
 
 ### Customer
 
+For detailed documentation, see [Customer API Documentation](docs/Customer.md).
+
 - `wiz.customer.list(params?)`
 - `wiz.customer.get(id)`
 - `wiz.customer.create(data)`
@@ -88,6 +105,8 @@ try {
 - `wiz.customer.delete(id)`
 
 #### Customer Address
+
+For detailed documentation, see [Customer Address API Documentation](docs/CustomerAddress.md).
 
 - `wiz.customer.address.list(customerId, params?)`
 - `wiz.customer.address.get(customerId, addressId)`
@@ -97,6 +116,8 @@ try {
 
 #### Customer Contact
 
+For detailed documentation, see [Customer Contact API Documentation](docs/CustomerContact.md).
+
 - `wiz.customer.contact.list(customerId, params?)`
 - `wiz.customer.contact.get(customerId, contactId)`
 - `wiz.customer.contact.create(customerId, data)`
@@ -105,6 +126,8 @@ try {
 
 ### Product
 
+For detailed documentation, see [Product API Documentation](docs/Product.md).
+
 - `wiz.product.list(params?)`
 - `wiz.product.get(id)`
 - `wiz.product.create(data)`
@@ -112,6 +135,8 @@ try {
 - `wiz.product.delete(id)`
 
 ### Order
+
+For detailed documentation, see [Order API Documentation](docs/Order.md).
 
 - `wiz.order.list(params?)`
 - `wiz.order.get(id)`
@@ -122,6 +147,8 @@ try {
 
 ### Invoice
 
+For detailed documentation, see [Invoice API Documentation](docs/Invoice.md).
+
 - `wiz.invoice.list(params?)`
 - `wiz.invoice.get(id)`
 - `wiz.invoice.create(data)`
@@ -130,20 +157,28 @@ try {
 
 ### Attribute
 
+For detailed documentation, see [Attribute API Documentation](docs/Attribute.md).
+
 - `wiz.attribute.list(params?)`
 
 ### Inventory
+
+For detailed documentation, see [Inventory API Documentation](docs/Inventory.md).
 
 - `wiz.inventory.list(params?)`
 - `wiz.inventory.update(data)`
 
 ### Payment Method
 
+For detailed documentation, see [Payment Method API Documentation](docs/PaymentMethod.md).
+
 - `wiz.paymentmethod.list(params?)`
 - `wiz.paymentmethod.create(data)`
 - `wiz.paymentmethod.delete(id)`
 
 ### Price List
+
+For detailed documentation, see [Price List API Documentation](docs/PriceList.md).
 
 - `wiz.pricelist.list(params?)`
 - `wiz.pricelist.get(id)`
@@ -153,14 +188,20 @@ try {
 
 ### Product Pricing
 
+For detailed documentation, see [Product Pricing API Documentation](docs/ProductPricing.md).
+
 - `wiz.productpricing.list(params?)`
 - `wiz.productpricing.update(id, data)`
 
 ### Sales Rep (User)
 
+For detailed documentation, see [Sales Rep API Documentation](docs/SalesRep.md).
+
 - `wiz.salesrep.list(params?)`
 
 ### Shipment
+
+For detailed documentation, see [Shipment API Documentation](docs/Shipment.md).
 
 - `wiz.shipment.list(params?)`
 - `wiz.shipment.get(params)`
