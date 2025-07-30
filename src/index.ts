@@ -23,7 +23,8 @@ export class WizCommerce {
   }
 
   customer = {
-    list: (params?: any) => Customer.list(this.client, params),
+    list: (params?: Customer.CustomerListRequest) =>
+      Customer.list(this.client, params),
     get: (id: string) => Customer.get(this.client, id),
     create: (data: Customer.CustomerCreateRequest) =>
       Customer.create(this.client, data),
@@ -31,8 +32,10 @@ export class WizCommerce {
       Customer.update(this.client, id, data),
     delete: (id: string) => Customer.delete(this.client, id),
     address: {
-      list: (customerId: string, params?: any) =>
-        Customer.address.list(this.client, customerId, params),
+      list: (
+        customerId: string,
+        params?: Customer.address.AddressListRequest
+      ) => Customer.address.list(this.client, customerId, params),
       get: (customerId: string, addressId: string) =>
         Customer.address.get(this.client, customerId, addressId),
       create: (
@@ -48,8 +51,10 @@ export class WizCommerce {
         Customer.address.delete(this.client, customerId, addressId),
     },
     contact: {
-      list: (customerId: string, params?: any) =>
-        Customer.contact.list(this.client, customerId, params),
+      list: (
+        customerId: string,
+        params?: Customer.contact.ContactListRequest
+      ) => Customer.contact.list(this.client, customerId, params),
       get: (customerId: string, contactId: string) =>
         Customer.contact.get(this.client, customerId, contactId),
       create: (
@@ -67,7 +72,8 @@ export class WizCommerce {
   };
 
   product = {
-    list: (params?: any) => Product.list(this.client, params),
+    list: (params?: Product.ProductListRequest) =>
+      Product.list(this.client, params),
     get: (id: string) => Product.get(this.client, id),
     create: (data: Product.ProductCreateRequest) =>
       Product.create(this.client, data),
@@ -77,7 +83,7 @@ export class WizCommerce {
   };
 
   order = {
-    list: (params?: any) => Order.list(this.client, params),
+    list: (params?: Order.OrderListRequest) => Order.list(this.client, params),
     get: (id: string) => Order.get(this.client, id),
     create: (data: Order.OrderCreateRequest) => Order.create(this.client, data),
     update: (id: string, data: Order.OrderUpdateRequest) =>
@@ -111,14 +117,16 @@ export class WizCommerce {
   };
 
   paymentmethod = {
-    list: (params?: any) => PaymentMethod.list(this.client, params),
+    list: (params?: PaymentMethod.PaymentMethodRequest) =>
+      PaymentMethod.list(this.client, params),
     create: (data: PaymentMethod.PaymentMethodCreateRequest) =>
       PaymentMethod.create(this.client, data),
     delete: (id: string) => PaymentMethod.delete(this.client, id),
   };
 
   pricelist = {
-    list: (params?: any) => PriceList.list(this.client, params),
+    list: (params?: PriceList.PriceListRequest) =>
+      PriceList.list(this.client, params),
     get: (id: string) => PriceList.get(this.client, id),
     create: (data: PriceList.PriceListCreateRequest) =>
       PriceList.create(this.client, data),
@@ -128,7 +136,8 @@ export class WizCommerce {
   };
 
   productpricing = {
-    list: (params?: any) => ProductPricing.list(this.client, params),
+    list: (id: string, params?: ProductPricing.ProductPriceRequest) =>
+      ProductPricing.list(this.client, id, params),
     update: (id: string, data: ProductPricing.ProductPriceRequest) =>
       ProductPricing.update(this.client, id, data),
   };
@@ -139,7 +148,8 @@ export class WizCommerce {
   };
 
   shipment = {
-    list: (params?: any) => Shipment.list(this.client, params),
+    list: (params?: Shipment.ShipmentRequest) =>
+      Shipment.list(this.client, params),
     get: (params: any) => Shipment.get(this.client, params),
     create: (data: Shipment.ShipmentCreateRequest) =>
       Shipment.create(this.client, data),
@@ -147,6 +157,5 @@ export class WizCommerce {
       Shipment.update(this.client, id, data),
     delete: (params: Shipment.ShipmentPathParams) =>
       Shipment.delete(this.client, params),
-
   };
 }

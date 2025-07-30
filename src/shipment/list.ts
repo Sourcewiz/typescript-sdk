@@ -3,7 +3,7 @@ import { ShipmentRequest, ShipmentResponse } from "./types.js";
 
 export async function listShipments(
   client: HttpClient,
-  params: ShipmentRequest
+  params: ShipmentRequest = {} as ShipmentRequest
 ): Promise<ShipmentResponse[]> {
   return client.get("/shipments", params);
 }
