@@ -7,7 +7,7 @@ export const URL = {
     V1: "https://api-staging.sourcerer.tech/v1",
     V2: "https://api-staging.sourcerer.tech/v2",
   },
-  production: {
+  api: {
     V1: "https://api.wizcommerce.com/v1",
     V2: "https://api.wizcommerce.com/v2",
   },
