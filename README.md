@@ -35,32 +35,16 @@ npm install wizcommerce
 ```ts
 import { WizCommerce } from "wizcommerce";
 
-const wiz = new WizCommerce(WizCommerce.PRODUCTION, "<API_KEY>");
+// For v1 endpoints (all resources)
+const wizV1 = new WizCommerce(WizCommerce.API.V1, "<API_KEY>");
+wizV1.customer.list({ page: 1, page_size: 20 }).then(console.log);
 
-// List customers with pagination
-wiz.customer.list({ page: 1, page_size: 20 }).then(console.log);
-
-// Create a customer
-wiz.customer
-  .create({
-    companyName: "Acme Inc.",
-    displayName: "Acme",
-    referenceId: "ACME-001",
-    email: "info@acme.com",
-    addresses: [
-      /* ... */
-    ],
-    contacts: [
-      /* ... */
-    ],
-    attributes: [
-      /* ... */
-    ],
-  })
-  .then(console.log);
+// For v2 endpoints (only order resource)
+const wizV2 = new WizCommerce(WizCommerce.API.V2, "<API_KEY>");
+wizV2.order.list({ page: 1, page_size: 20 }).then(console.log);
 
 // Error handling example
-wiz.customer.get("bad-id").catch((err) => {
+wizV1.customer.get("bad-id").catch((err) => {
   console.error("API error:", err);
 });
 ```
@@ -136,7 +120,7 @@ For detailed documentation, see [Product API Documentation](docs/Product.md).
 
 ### Order
 
-For detailed documentation, see [Order API Documentation](docs/Order.md).
+For detailed documentation, see [Order API Documentation](docs/Order.md) (v1) or [Order API Documentation (v2)](docs/v2/Order.md).
 
 - `wiz.order.list(params?)`
 - `wiz.order.get(id)`
